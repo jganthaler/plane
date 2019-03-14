@@ -1,0 +1,26 @@
+{
+  "name": "plane",
+  "version": "0.1.0",
+  "description": "A minimal CSS Framework based on Flexbox",
+  "main": "index.js",
+  "scripts": {
+    "gulp-styles": "gulp styles",
+    "webpack-bundle": "webpack --mode production",
+    "watch": "gulp",
+    "publish": "npm run webpack-bundle && npm run gulp-styles",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Johannes Ganthaler",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-stream": "^5.2.1"
+  }
+}

@@ -1,0 +1,82 @@
+/// Flex Alignment
+.align-left {
+    justify-content: flex-start;
+}
+
+.align-right {
+    justify-content: flex-end;
+}
+
+.align-center {
+    justify-content: center;
+}
+
+.align-justify {
+    justify-content: space-between;
+}
+
+.align-spaced {
+    justify-content: space-around;
+}
+/// Text
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.strong {
+    font-weight: $global-weight-bold;
+}
+
+.italic {
+    text-transform: italic;
+}
+
+@each $spacing-name, $spacing-values in $global-spacing {
+
+    $class-name: if($spacing-name == medium, '', -#{$spacing-name});
+
+    .margin#{$class-name}-top {
+        @each $breakpoint, $value in $spacing-values {
+            @include breakpoint($breakpoint) {
+                margin-top: rem-calc($value);
+            }
+        }
+    }
+    .margin#{$class-name}-bottom {
+        @each $breakpoint, $value in $spacing-values {
+            @include breakpoint($breakpoint) {
+                margin-bottom: rem-calc($value);
+            }
+        }
+    }
+    .padding#{$class-name}-top {
+        @each $breakpoint, $value in $spacing-values {
+            @include breakpoint($breakpoint) {
+                padding-top: rem-calc($value);
+            }
+        }
+    }
+    .padding#{$class-name}-bottom {
+        @each $breakpoint, $value in $spacing-values {
+            @include breakpoint($breakpoint) {
+                padding-bottom: rem-calc($value);
+            }
+        }
+    }
+}

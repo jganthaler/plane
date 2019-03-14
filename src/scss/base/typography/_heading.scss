@@ -1,0 +1,72 @@
+// Base
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $header-font-family;
+    font-style: $header-font-style;
+}
+
+$header-styles: (
+    small: (
+        'h1': ('font-size': 24, 'line-height' : 1.2, 'margin-top': 0 ,'margin-bottom': 10),
+        'h2': ('font-size': 20),
+        'h3': ('font-size': 19),
+        'h4': ('font-size': 18),
+        'h5': ('font-size': 17),
+        'h6': ('font-size': 16),
+    ),
+    medium: (
+        'h1': ('font-size': 48, 'line-height' : 1.25, 'margin-top': 60 ,'margin-bottom': 30),
+        'h2': ('font-size': 40, 'line-height' : 1.25, 'margin-top': 60 ,'margin-bottom': 30),
+        'h3': ('font-size': 31),
+        'h4': ('font-size': 25),
+        'h5': ('font-size': 20),
+        'h6': ('font-size': 16),
+    ),
+);
+
+@each $size, $headers in $header-styles {
+    @include breakpoint($size) {
+        @each $header, $header-defs in $headers {
+            $font-size-temp: 1rem;
+            #{$header}, .#{$header} {
+                @if map-has-key($header-defs, font-size) {
+                    $font-size-temp: rem-calc(map-get($header-defs, font-size));
+                    font-size: $font-size-temp;
+                }
+                @if map-has-key($header-defs, line-height) {
+                    line-height: map-get($header-defs, line-height);
+                }
+                @if map-has-key($header-defs, margin-top) {
+                    margin-top: rem-calc(map-get($header-defs, margin-top));
+                }
+                @if map-has-key($header-defs, margin-bottom) {
+                    margin-bottom: rem-calc(map-get($header-defs, margin-bottom));
+                }
+            }
+        }
+    }
+}
+
+// Set margins between headings
+h1 + h2 {
+
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+
+}
+
+h5 + h6 {
+
+}
+
+h6 {
+    font-style: italic;
+    font-weight: normal;
+}

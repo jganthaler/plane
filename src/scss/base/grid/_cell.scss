@@ -1,0 +1,41 @@
+/// Calculate the percentage size of a cell.
+///
+/// @param {Number|List} $size [$grid-columns] - Size to make the cell. You can pass a value in multiple formats, such as `6`, `50%`, `1 of 2` or `1/3`.
+@function xy-cell-size($size: $grid-columns) {
+    // Parsing percents, decimals, n of n and number counts
+    @if type-of($size) == 'number' {
+        @if unit($size) == '%' {
+            $size: $size;
+        } @else if $size < 1 {
+            $size: percentage($size);
+        } @else {
+            $size: percentage($size / $grid-columns);
+        }
+    }
+
+        // Parsing "n of n" or "n/n" expressions
+    @else if type-of($size) == 'list' {
+        @if length($size) != 3 {
+            @error 'Wrong syntax for xy-cell-size(). Use the format "n of n" or "n/n".';
+        } @else {
+            $size: percentage(nth($size, 1) / nth($size, 3));
+        }
+    }
+        // Anything else is incorrect
+    @else {
+        @error 'Wrong syntax for xy-cell-size(). Use a number, decimal, percentage, or "n of n" / "n/n".';
+    }
+
+    @return $size;
+}
+
+@mixin cell-properties($size, $margin-gutter) {
+    @if($margin-gutter == 0) {
+        width: #{xy-cell-size($size)};
+    } @else {
+        $val: calc(#{xy-cell-size($size)} - #{rem-calc($margin-gutter)});
+        width: $val;
+        margin-left: rem-calc($margin-gutter) / 2;
+        margin-right: rem-calc($margin-gutter) / 2;
+    }
+}

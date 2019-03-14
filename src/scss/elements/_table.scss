@@ -1,0 +1,31 @@
+table {
+    font-size: $global-font-size;
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100%;
+    width: 100%;
+    empty-cells: show;
+}
+
+th {
+    font-weight: $global-weight-bold;
+    color: $body-font-color;
+    text-align: left;
+    vertical-align: bottom;
+}
+td {
+    color: $body-font-color;
+    vertical-align: top;
+}
+
+th,
+td {
+    padding: rem-calc(10 15);
+    border-bottom: 1px solid $light-gray;
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        padding-right: 0;
+    }
+}

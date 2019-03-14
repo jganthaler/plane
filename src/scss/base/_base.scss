@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: $body-background;
+    font-family: $body-font-family;
+    font-weight: $global-weight-normal;
+    line-height: $global-lineheight;
+    color: $body-font-color;
+    -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+    -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+    @include breakpoint(medium) {
+        font-size: $global-font-size-desktop;
+    }
+}
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+}
+
+button {
+    font-size: $global-font-size;
+    outline: none;
+    padding: 0;
+    border: 0;
+    border-radius: $global-radius;
+    background: transparent;
+    line-height: $global-lineheight;
+    cursor: pointer;
+}
+
+.grid-demo {
+    .grid-x {
+        margin-top: rem-calc(10);
+        margin-bottom: rem-calc(10);
+    }
+
+    .cell {
+        background-color: $primary-color;
+        &:nth-child(even) {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+.callout {
+    padding: 2rem;
+    border-radius: $global-radius;
+    background-color: $success-color;
+    color: $white;
+}
+

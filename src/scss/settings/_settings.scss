@@ -1,0 +1,118 @@
+//  Foundation for Sites Settings
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Breakpoints
+//   3. The Grid
+//   4. Base Typography
+//   5. Form
+
+// 1. Global
+// ---------
+$global-font-size: 100%;
+$global-font-size-desktop: rem-calc(18);
+$global-width: rem-calc(1200);
+$global-lineheight: 1.5;
+
+$primary-color: #1779ba;
+$secondary-color: #767676;
+$success-color: #3adb76;
+$warning-color: #ffae00;
+$alert-color: #cc4b37;
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #0a0a0a;
+$white: #fefefe;
+$body-background: $white;
+$body-font-color: $black;
+$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-radius: rem-calc(5);
+$global-spacing: (
+    small: ('small' : 10, 'medium' : 20, 'large' : 40),
+    medium: ('small' : 20, 'medium' : 40, 'large' : 80),
+    large: ('small' : 40, 'medium' : 60, 'large' : 120)
+);
+
+// 2. Breakpoints
+// --------------
+$breakpoints: (
+    small: 0,
+    medium: 640px,
+    large: 1024px
+);
+$breakpoint-classes: (small medium large);
+
+// 3. The Grid
+// -----------
+$grid-container: $global-width;
+$grid-columns: 12;
+
+$grid-margin-gutters: (
+    small: 10px,
+    medium: 20px,
+    large: 30px
+);
+
+// 4. Base Typography
+// -----------
+
+// Paragraph
+$paragraph-lineheight: 1.6;
+$paragraph-lineheight-desktop: 1.7;
+$leading: $paragraph-lineheight * 1rem;
+$leading-desktop: $paragraph-lineheight-desktop * $global-font-size-desktop;
+$paragraph-text-rendering: optimizeLegibility;
+
+// Code
+$font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
+$pre-font-size: $global-font-size;
+$pre-line-height: $global-lineheight;
+
+// Anchor
+$anchor-color: $primary-color;
+$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-text-decoration: none;
+$anchor-text-decoration-hover: none;
+
+// List
+$list-style-type: disc;
+$list-style-position: outside;
+$list-side-margin: 1.25rem;
+$list-nested-side-margin: 1.25rem;
+$defnlist-term-weight: $global-weight-bold;
+
+// Lead and Small
+$lead-font-size: $global-font-size * 1.25;
+$lead-lineheight: 1.6;
+$small-font-size: 80%;
+
+// Heading
+$header-font-family: $body-font-family;
+$header-font-weight: $global-weight-normal;
+$header-font-style: normal;
+$header-lineheight: 1.25;
+$header-margin-bottom: 0.5rem;
+$header-text-rendering: optimizeLegibility;
+
+// 5. Form
+// -----------
+$input-placeholder-color: $medium-gray;
+$input-font-size: rem-calc(16);
+$input-height: rem-calc(40);
+$input-background: $white;
+$input-border: 1px solid $light-gray;
+$input-padding: rem-calc(5 10);
+$input-color: $body-font-color;
+$input-textarea-padding: rem-calc(10);
+$input-focus-background: $white;
+$input-focus-border: 1px solid $medium-gray;
+$input-disabled-opacity: 0.5;
+$form-label-font-size: rem-calc(12);
+$form-label-color: $dark-gray;
+$form-item-margin: 1rem;
+$custom-checkbox-size: rem-calc(16);

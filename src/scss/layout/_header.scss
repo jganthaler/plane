@@ -1,0 +1,10 @@
+.header {
+    background-color: $light-gray;
+}
+
+.header-logo {
+    display: block;
+    font-size: rem-calc(40);
+    font-weight: $global-weight-bold;
+}
+

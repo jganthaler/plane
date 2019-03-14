@@ -1,0 +1,141 @@
+// Paragraphs
+p {
+    margin-bottom: $leading;
+    font-size: inherit;
+    line-height: $paragraph-lineheight;
+    text-rendering: $paragraph-text-rendering;
+    @include breakpoint(large) {
+        margin-bottom: $leading-desktop;
+        line-height: $paragraph-lineheight-desktop;
+    }
+}
+
+.lead {
+    font-size: $lead-font-size;
+    line-height: $lead-lineheight;
+}
+
+// Emphasized text
+em,
+i {
+    font-style: italic;
+    line-height: inherit;
+}
+
+// Strong text
+strong,
+b {
+    font-weight: $global-weight-bold;
+    line-height: inherit;
+}
+
+// Small text
+small {
+    font-size: $small-font-size;
+    line-height: inherit;
+}
+
+// Links
+a {
+    color: $anchor-color;
+    text-decoration: $anchor-text-decoration;
+    &:hover {
+        color: $anchor-color-hover;
+        text-decoration: $anchor-text-decoration-hover;
+    }
+}
+
+// Pre
+pre {
+    font-family: $font-family-monospace;
+    font-size: $global-font-size;
+    padding: 1em;
+    background: $light-gray;
+    overflow: auto;
+    white-space: pre;
+    display: block;
+    margin-bottom: $leading;
+    @include breakpoint(large) {
+        margin-bottom: $leading-desktop;
+    }
+    code {
+        font-size: 100%;
+        border: none;
+        background: none;
+    }
+}
+
+// Line
+hr {
+    border: none;
+    border-bottom: 1px solid rgba($black, 0.1);
+    overflow: visible;
+    margin-top: -1px;
+}
+
+// Lists
+ul,
+ol,
+dl {
+    margin-bottom: $leading;
+    list-style-position: $list-style-position;
+    line-height: $paragraph-lineheight;
+    @include breakpoint(large) {
+        margin-bottom: $leading-desktop;
+        line-height: $paragraph-lineheight-desktop;
+    }
+}
+
+// List items
+li {
+    font-size: inherit;
+}
+
+// Unordered lists
+ul {
+    margin-left: $list-side-margin;
+    list-style-type: $list-style-type;
+}
+
+// Ordered lists
+ol {
+    margin-left: $list-side-margin;
+}
+
+// Nested unordered/ordered lists
+ul, ol {
+    & & {
+        margin-left: $list-nested-side-margin;
+        margin-bottom: 0;
+    }
+    &.no-bullet {
+        margin-left: 0;
+        list-style: none;
+    }
+}
+
+// Definition lists
+dl {
+    dt {
+        font-weight: $defnlist-term-weight;
+    }
+}
+
+// Blockquote
+blockquote {
+    font-size: $global-font-size;
+    line-height: $paragraph-lineheight;
+    text-rendering: $paragraph-text-rendering;
+    padding: 1em;
+    border-left: 1px solid $body-font-color;
+    @include breakpoint(large) {
+        margin-bottom: $leading-desktop;
+        line-height: $paragraph-lineheight-desktop;
+    }
+    & small {
+        font-style: italic;
+    }
+    & p:last-child {
+        margin-bottom: 0;
+    }
+}
