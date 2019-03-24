@@ -18,6 +18,8 @@
     }
 }
 
+/// Todo: Inherit cell sizings from previous breakpoint
+
 $gutter-size: 0;
 @each $name in $breakpoint-classes {
 
@@ -53,54 +55,53 @@ $gutter-size: 0;
             }
         }
 
-    } @else {
+    }
 
-        @include breakpoint($name) {
-            .grid-container {
-                @include xy-gutters($gutter-size, $gutter-type: padding);
-            }
-
-            .grid-margin-x {
-                @include xy-gutters($gutters: $gutter-size, $gutter-type: margin, $gutter-position: right left, $negative: true);
-                & > .cell {
-                    @include cell-properties(100%, $gutter-size);
-                }
-            }
+    @include breakpoint($name) {
+        .grid-container {
+            @include xy-gutters($gutter-size, $gutter-type: padding);
         }
 
-        // Sizing (percentage)
-        @include breakpoint($name) {
-            @for $i from 1 through $grid-columns {
-                // Sizing (percentage)
-                .grid-x > .#{$name}-#{$i} {
-                    @include cell-properties($i, 0);
-                }
+        .grid-margin-x {
+            @include xy-gutters($gutters: $gutter-size, $gutter-type: margin, $gutter-position: right left, $negative: true);
+            & > .cell {
+                @include cell-properties(100%, $gutter-size);
             }
         }
+    }
 
-        // Margins
-        @include breakpoint($name) {
-            @for $i from 1 through $grid-columns {
-                // Sizing (percentage)
-                .grid-margin-x > .#{$name}-#{$i} {
-                    @include cell-properties($i, $gutter-size);
-                }
+    // Sizing (percentage)
+    @include breakpoint($name) {
+        @for $i from 1 through $grid-columns {
+            // Sizing (percentage)
+            .grid-x > .#{$name}-#{$i} {
+                @include cell-properties($i, 0);
             }
         }
+    }
 
-        /// Offsets
-        @include breakpoint($name) {
-            @for $i from 1 through $grid-columns {
-                // Offsets
-                $offset: $i - 1;
+    // Margins
+    @include breakpoint($name) {
+        @for $i from 1 through $grid-columns {
+            // Sizing (percentage)
+            .grid-margin-x > .#{$name}-#{$i} {
+                @include cell-properties($i, $gutter-size);
+            }
+        }
+    }
 
-                .#{$name}-offset-#{$offset} {
-                    margin-left: #{xy-cell-size($offset)};
-                }
+    /// Offsets
+    @include breakpoint($name) {
+        @for $i from 1 through $grid-columns {
+            // Offsets
+            $offset: $i - 1;
 
-                .grid-margin-x > .#{$name}-offset-#{$offset} {
-                    margin-left: calc(#{xy-cell-size($offset)} + #{$gutter-size / 2});
-                }
+            .#{$name}-offset-#{$offset} {
+                margin-left: #{xy-cell-size($offset)};
+            }
+
+            .grid-margin-x > .#{$name}-offset-#{$offset} {
+                margin-left: calc(#{xy-cell-size($offset)} + #{$gutter-size / 2});
             }
         }
     }
