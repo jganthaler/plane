@@ -1,3 +1,4 @@
+import '../scss/index.scss';
 import { Rectangle } from './component';
 
 const div = document.querySelector('#callout');

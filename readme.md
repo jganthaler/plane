@@ -18,6 +18,6 @@ cd plane
 
 Run `npm install` on your terminal
 
-Run `npm run watch` for development mode or `npm run publish` for production mode
+Run `npm start` for development mode or `npm run build` for production mode
 
 Edit the `src/scss/settings/_settings.scss` file for basic configuration or edit any other file as you wish
