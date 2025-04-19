@@ -1,0 +1,233 @@
+.docs-body {
+    &.sidebar-expanded {
+        overflow: hidden;
+    }
+}
+
+.docs-header {
+    background-color: $black;
+    color: $white;
+    position: fixed;
+    z-index: 8000;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: rem-calc(20 15);
+    height: rem-calc(60);
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(medium) {
+        height: rem-calc(80);
+    }
+
+    @include breakpoint(large) {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        border: 2px solid $white;
+        outline: none;
+        width: rem-calc(40);
+        height: rem-calc(40);
+        align-items: center;
+        justify-content: center;
+        color: $white;
+    }
+
+    .logo {
+        display: block;
+        text-decoration: none;
+        color: $white;
+        font-size: rem-calc(24);
+        font-weight: $global-weight-bold;
+        @include absolute-center();
+    }
+}
+
+.docs-sidebar {
+    width: rem-calc(280);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $black;
+    color: $white;
+    z-index: 9000;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    height: 100%;
+
+    &.is-expanded {
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    @include breakpoint(large) {
+        visibility: visible;
+        transform: none;
+    }
+
+    a {
+        color: $white;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    .sidebar-title {
+        position: relative;
+        height: rem-calc(60);
+        border-bottom: 1px solid $gray-900;
+        padding: rem-calc(0 20);
+        display: flex;
+        align-items: center;
+
+        @include breakpoint(medium) {
+            height: rem-calc(80);
+        }
+
+        .logo {
+            display: block;
+            text-decoration: none;
+            font-size: rem-calc(24);
+            font-weight: $global-weight-bold;
+        }
+    }
+
+    .close-button {
+        display: flex;
+        outline: none;
+        width: rem-calc(40);
+        height: rem-calc(40);
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: rem-calc(20);
+
+        @include breakpoint(large) {
+            display: none;
+        }
+    }
+
+    .sidebar-nav {
+        height: calc(100% - 80px);
+        overflow: auto;
+    }
+
+    .menu {
+        padding: rem-calc(20);
+        font-size: rem-calc(16);
+
+        li {
+            &:hover {
+                text-decoration: none;
+
+                a {
+                    color: $gray-100;
+                }
+            }
+
+            &.is-active {
+                font-weight: $global-weight-bold;
+            }
+
+            a {
+                text-decoration: none;
+                padding: rem-calc(10 0);
+                display: block;
+                line-height: rem-calc(20);
+            }
+        }
+
+        &>li {
+            border-bottom: 1px solid $gray-900;
+
+            &>ul {
+                font-size: rem-calc(14);
+                color: $gray-900;
+                margin: rem-calc(0 0 10 20);
+                padding: 0;
+                list-style: none;
+            }
+        }
+
+    }
+}
+
+.docs-content {
+    width: 100%;
+    padding-bottom: rem-calc(60);
+    padding-top: rem-calc(60);
+
+    @include breakpoint(medium) {
+        padding-bottom: rem-calc(80);
+        padding-top: rem-calc(80);
+    }
+
+    @include breakpoint(large) {
+        padding-top: 0;
+        padding-left: rem-calc(280);
+    }
+
+    .content-wrapper {
+        padding: rem-calc(0 10);
+    }
+
+    h1 {
+        border-bottom: 1px solid $gray-100;
+        padding: 0.25em 0;
+    }
+
+    .code {
+        position: relative;
+        &::before {
+            color: $gray-900;
+            content: attr(data-lang);
+            font-size: rem-calc(12);
+            position: absolute;
+            right: rem-calc(8);
+            top: rem-calc(8);
+          }
+    }
+
+    .headings-table {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+    }
+
+    .grid-demo {
+        margin-bottom: $leading;
+
+        .cell-content {
+            background-color: $gray-100;
+            padding: rem-calc(5 10);
+            text-align: center;
+            font-size: rem-calc(12);
+            margin: rem-calc(4 0);
+        }
+
+        .grid-x {
+            &>.cell {
+                &:nth-child(2n) {
+                    .cell-content {
+                        background-color: $gray-200;
+                    }
+                }
+            }
+        }
+    }
+}

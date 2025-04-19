@@ -1,0 +1,86 @@
+.page-header {
+    background-color: $primary-color;
+    background-image: linear-gradient(
+        45deg,
+        hsl(207deg 100% 28%) 0%,
+        hsl(205deg 100% 31%) 8%,
+        hsl(203deg 100% 32%) 17%,
+        hsl(200deg 100% 33%) 25%,
+        hsl(196deg 100% 33%) 33%,
+        hsl(192deg 100% 32%) 42%,
+        hsl(185deg 100% 30%) 50%,
+        hsl(177deg 100% 29%) 58%,
+        hsl(168deg 100% 31%) 67%,
+        hsl(160deg 100% 32%) 75%,
+        hsl(151deg 100% 33%) 83%,
+        hsl(125deg 51% 46%) 92%,
+        hsl(93deg 60% 44%) 100%
+      );
+    color: $white;
+    padding-left: rem-calc(10);
+    padding-right: rem-calc(10);
+    padding-top: rem-calc(80);
+    padding-bottom: rem-calc(40);
+
+    @include breakpoint(medium) {
+        padding-top: rem-calc(120);
+        padding-bottom: rem-calc(80);
+    }
+
+    .cta-buttons {
+        .button {
+            margin-top: rem-calc(5);
+            margin-bottom: rem-calc(5);
+            &:not(:last-child) {
+                margin-right: rem-calc(10);
+            }
+        }
+    }
+}
+
+.page-content {
+    padding-left: rem-calc(10);
+    padding-right: rem-calc(10);
+    .feature-section {
+        padding-top: rem-calc(40);
+        padding-bottom: rem-calc(40);
+        @include breakpoint(large) {
+            padding-top: rem-calc(80);
+            padding-bottom: rem-calc(80);
+        }
+        .lead {
+            font-size: $global-font-size;
+            line-height: $global-lineheight;
+            @include breakpoint(medium) {
+                font-size: $lead-font-size;
+                line-height: $lead-lineheight;
+            }
+        }
+    }
+
+    .feature-item {
+        font-size: rem-calc(14);
+        .h3 {
+            font-size: rem-calc(16);
+            @include breakpoint(medium) {
+                font-size: rem-calc(18);
+            }
+        }
+    }
+}
+
+.page-footer {
+    background-color: $black;
+    color: $white;
+    font-size: rem-calc(12);
+    line-height: rem-calc(20);
+    padding-left: rem-calc(10);
+    padding-right: rem-calc(10);
+    padding-top: rem-calc(20);
+    padding-bottom: rem-calc(20);
+    @include breakpoint(large) {
+        font-size: rem-calc(14);
+        padding-top: rem-calc(40);
+        padding-bottom: rem-calc(40);
+    }
+}

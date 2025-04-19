@@ -1,62 +1,149 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="dist/main.css">
+    <title>Plane CSS Framework - Minimal and Customizable for Modern Web Development</title>
+
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Plane is a minimal, unopinionated CSS framework that gives developers the freedom to customize and extend components for modern web projects. Open source and designed for performance.">
+
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="CSS framework, minimal CSS, unopinionated, customizable components, open source, performance, modern web development">
+
+    <!-- Author -->
+    <meta name="author" content="Plane">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Plane CSS Framework - Minimal and Customizable">
+    <meta property="og:description"
+        content="A lightweight, flexible CSS framework designed to give developers full control over styling with minimal default styles.">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plane CSS Framework - Minimal and Customizable">
+    <meta name="twitter:description" content="A lightweight, flexible CSS framework designed for modern web projects.">
+    <meta name="twitter:image" content="https://yourwebsite.com/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="./assets/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./assets/favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="dist/css/app.min.css">
 </head>
+
 <body>
-
-<div class="grid-container">
-    <div class="grid-x align-center">
-        <div class="cell large-8">
-            <h1 class="h1">Hello World</h1>
-            <p class="lead">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, culpa cumque dolores explicabo fugit
-                illum molestiae quisquam quo sunt voluptate?
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolor facere fugiat neque obcaecati
-                pariatur qui quia saepe. Deleniti dicta earum laborum laudantium mollitia quae quaerat quibusdam,
-                quisquam repudiandae voluptas?
-            </p>
-            <div id="callout" class="callout margin-small-top margin-small-bottom"></div>
-
-            <h2 class="h2">Grid</h2>
-
-            <div class="callout margin-small-top margin-small-bottom">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto earum enim ex officiis praesentium
-                quas quibusdam reiciendis repudiandae sunt, ut.
-            </div>
-
-            <div class="grid-x grid-margin-x">
-                <div class="cell">cell</div>
-            </div>
-
-            <div class="grid-x grid-margin-x">
-                <div class="cell medium-6">.medium-6</div>
-                <div class="cell medium-6">.medium-6</div>
-            </div>
-
-            <div class="grid-x grid-margin-x">
-                <div class="cell medium-6 large-4">.medium-6 .large-4</div>
-                <div class="cell medium-6 large-8">.medium-6 .large-8</div>
-            </div>
-
-            <div>
-                <h2 class="h2">Getting started</h2>
-                <ol>
-                    <li>Run <code>npm install</code> on your terminal</li>
-                    <li>Run <code>npm start</code> for development mode or <code>npm run build</code> for production mode</li>
-                    <li>Edit the <code>src/scss/settings/_settings.scss</code> file for basic configuration or edit any other file as you wish</li>
-                </ol>
+    <div class="page-header">
+        <div class="grid-container">
+            <div class="grid-x align-center">
+                <div class="cell large-10">
+                    <h1 class="h1">Plane CSS Framework</h1>
+                    <p class="lead">Lightweight. Flexible. Built for Developers.</p>
+                    <div class="cta-buttons">
+                        <a class="button is-secondary" href="./docs/docs.html">Get started</a>
+                        <a class="button is-hollow is-light" href="#">View on Github</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<script type="text/javascript" src="dist/main.js"></script>
+    <div class="page-content">
+        <section class="feature-section">
+            <div class="grid-container">
+                <div class="grid-x align-center">
+                    <div class="cell large-10">
+                        <h2 class="h2">Why Choose Plane?</h2>
+                        <p class="lead">Plane is a <strong>minimal CSS framework</strong> that gives you the freedom to <strong>build responsive
+                            websites
+                            with precision</strong>. It's designed to be extended, allowing you to customize components,
+                            utilities, and
+                            layout according to your project needs.</p>
+                        <div class="grid-x grid-margin-x">
+                            <div class="cell medium-6 large-4 xlarge-4">
+                                <div class="feature-item">
+                                    <h3 class="h3">Minimal & Customizable</h3>
+                                    <p>Plane’s intentionally minimal design eliminates unnecessary defaults, giving you
+                                        a clean
+                                        slate to add and extend styles as needed. Its components are easily
+                                        customizable,
+                                        allowing you to modify or create new ones to fit your specific requirements.</p>
+                                </div>
+                            </div>
+                            <div class="cell medium-6 large-4 xlarge-4">
+                                <div class="feature-item">
+                                    <h3 class="h3">Responsive Grid System</h3>
+                                    <p>The flexible grid system in Plane allows you to create layouts that adjust
+                                        seamlessly
+                                        across different devices. It’s easy to configure using breakpoints, and the
+                                        system can
+                                        be tailored to the exact needs of your project.</p>
+                                </div>
+                            </div>
+                            <div class="cell medium-6 large-4 xlarge-4">
+                                <div class="feature-item">
+                                    <h3 class="h3">Lightweight</h3>
+                                    <p>Built with performance in mind, Plane's minimal footprint ensures fast load times
+                                        and
+                                        seamless performance across all devices. By keeping unnecessary styles and
+                                        scripts to a
+                                        minimum, Plane allows your website to deliver optimal speed without compromising
+                                        on
+                                        functionality.</p>
+                                </div>
+                            </div>
+                            <div class="cell medium-6 large-4 xlarge-4">
+                                <div class="feature-item">
+                                    <h3 class="h3">Override-Friendly</h3>
+                                    <p>Unlike other frameworks, Plane doesn’t impose heavy default styles. Instead, it
+                                        encourages developers to customize it with their own CSS, offering full control
+                                        over the
+                                        final design of the project.</p>
+                                </div>
+                            </div>
+                            <div class="cell medium-6 large-4 xlarge-4">
+                                <div class="feature-item">
+                                    <h3 class="h3">Meaningful Typography</h3>
+                                    <p>Plane provides a simple yet effective way to set up typography for both
+                                        desktop
+                                            and
+                                            mobile. This ensures that your text looks great across all devices,
+                                        maintaining
+                                        a
+                                        perfect balance between readability and aesthetics.</p>
+                                </div>
+                            </div>
+                            <div class="cell medium-6 large-4 xlarge-4">
+                                <div class="feature-item">
+                                    <h3 class="h3">Open Source</h3>
+                                    <p>Plane is fully open source and licensed under the MIT License,
+                                        allowing
+                                        developers to
+                                        freely use, modify, and distribute the framework with no restrictions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="page-footer">
+        <div class="grid-container">
+            <div class="grid-x align-center">
+                <div class="cell large-10">
+                    © 2024 Plane CSS Framework | Built for Developers
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="dist/js/app.min.js"></script>
 </body>
+
 </html>

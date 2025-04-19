@@ -15,7 +15,7 @@
 // Fieldset
 fieldset {
     font-family: inherit;
-    border: 1px solid $light-gray;
+    border: 1px solid $gray-100;
     border-radius: $global-radius;
     padding: 2rem;
     margin-bottom: $form-item-margin;
@@ -25,7 +25,7 @@ legend {
     font-size: $form-label-font-size;
     font-weight: $global-weight-normal;
     text-transform: uppercase;
-    color: $medium-gray;
+    color: $gray-500;
     padding: 0 1rem;
     margin-left: -1rem;
     position: relative;
@@ -108,7 +108,7 @@ input[type="checkbox"] {
         cursor: pointer;
         text-transform: none;
         font-weight: normal;
-        font-size: rem-calc(16);
+        font-size: rem-calc(14);
         color: inherit;
         span {
             display: block;
@@ -119,9 +119,9 @@ input[type="checkbox"] {
             transform: translateY(-50%);
             left: 0;
             background: $white;
-            border: 1px solid $medium-gray;
+            border: 1px solid $gray-500;
             &.checkbox {
-                border-radius: 0;
+                border-radius: 2px;
             }
             &.radio {
                 border-radius: 50%;

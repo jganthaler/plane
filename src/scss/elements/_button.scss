@@ -3,20 +3,23 @@
 
 .button {
     background-color: $primary-color;
+    border: 1px solid $primary-color;
     display: inline-block;
     color: $white;
     font-size: rem-calc(16);
     line-height: rem-calc(20);
     padding: rem-calc(10 20);
     border-radius: $global-radius;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     &:active,
     &:focus {
+        box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
     }
     &:hover {
         outline: none;
         text-decoration: none;
         background-color: scale_color($primary-color, $lightness: 15%);
+        border-color: scale_color($primary-color, $lightness: 15%);
         color: $white;
     }
     // Disabled
@@ -24,15 +27,34 @@
     &.is-disabled {
         cursor: default;
         font-style: normal;
-        color: #fff;
-        background-color: red;
         opacity: 0.5;
     }
     // Secondary
+    &.is-hollow {
+        background-color: transparent;
+        color: $primary-color;
+        &:hover {
+            background-color: scale_color($primary-color, $lightness: 95%);
+        }
+        &.is-light {
+            color: $white;
+            border-color: $white;
+            &:hover {
+                background-color: $white;
+                color: $primary-color;
+            }
+        }
+    }
     &.is-secondary {
         background-color: $secondary-color;
+        border-color: $secondary-color;
         &:hover {
             background-color: scale_color($secondary-color, $lightness: 15%);
+            border-color: scale_color($secondary-color, $lightness: 15%);
+        }
+        &.is-hollow {
+            border-color: $secondary-color;
+            color: $secondary-color;
         }
     }
 }

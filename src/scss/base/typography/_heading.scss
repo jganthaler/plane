@@ -7,12 +7,14 @@ h5,
 h6 {
     font-family: $header-font-family;
     font-style: $header-font-style;
+    font-weight: $header-font-weight;
+    margin-bottom: $header-margin-bottom;
 }
 
 $header-styles: (
     small: (
-        'h1': ('font-size': 24, 'line-height' : 1.2, 'margin-top': 0 ,'margin-bottom': 10),
-        'h2': ('font-size': 20),
+        'h1': ('font-size': 24, 'line-height' : 1.2, 'margin-top': 30 ,'margin-bottom': 15),
+        'h2': ('font-size': 20, 'line-height' : 1.2, 'margin-top': 20 ,'margin-bottom': 10),
         'h3': ('font-size': 19),
         'h4': ('font-size': 18),
         'h5': ('font-size': 17),
@@ -20,7 +22,7 @@ $header-styles: (
     ),
     medium: (
         'h1': ('font-size': 48, 'line-height' : 1.25, 'margin-top': 60 ,'margin-bottom': 30),
-        'h2': ('font-size': 40, 'line-height' : 1.25, 'margin-top': 60 ,'margin-bottom': 30),
+        'h2': ('font-size': 36, 'line-height' : 1.25, 'margin-top': 40 ,'margin-bottom': 20),
         'h3': ('font-size': 31),
         'h4': ('font-size': 25),
         'h5': ('font-size': 20),
@@ -52,21 +54,7 @@ $header-styles: (
 }
 
 // Set margins between headings
-h1 + h2 {
-
-}
-
-h2 + h3,
-h3 + h4,
-h4 + h5 {
-
-}
-
-h5 + h6 {
-
-}
-
-h6 {
-    font-style: italic;
-    font-weight: normal;
+h1 + h2, 
+.h1 + .h2 {
+    margin-top: 0;
 }

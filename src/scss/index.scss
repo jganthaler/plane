@@ -4,6 +4,7 @@
 @import 'util/util';
 
 // Global settings
+@import 'settings/fonts';
 @import 'settings/settings';
 
 // Basic stylings
@@ -20,10 +21,17 @@
 @import 'elements/button';
 @import 'elements/table';
 
-// Component
+// Components
+@import 'components/breadcrumb';
 @import 'components/menu';
 
 // Layout
 @import 'layout/header';
+@import 'layout/footer';
+
+// Layout
+@import 'pages/home';
+@import 'pages/docs';
 
 // Vendor
+@import 'vendors/prism.scss';

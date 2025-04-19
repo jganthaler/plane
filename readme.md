@@ -6,6 +6,9 @@ Plane is a clean and simple starting point for your next project. It comes with 
 * Reset and minimal styling for most elements
 * Fully customizable typography
 
+## Prerequisite
+Check for node, npm, and npx
+Install the gulp command line utility `npm install --global gulp-cli`
 
 ## Getting started
 

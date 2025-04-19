@@ -32,24 +32,3 @@ button {
     cursor: pointer;
 }
 
-.grid-demo {
-    .grid-x {
-        margin-top: rem-calc(10);
-        margin-bottom: rem-calc(10);
-    }
-
-    .cell {
-        background-color: $primary-color;
-        &:nth-child(even) {
-            background-color: $secondary-color;
-        }
-    }
-}
-
-.callout {
-    padding: 2rem;
-    border-radius: $global-radius;
-    background-color: $success-color;
-    color: $white;
-}
-

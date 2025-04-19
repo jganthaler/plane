@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plane CSS Framework Documentation - Getting Started</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Explore the official documentation for the Plane CSS framework. Learn how to get started, customize components, and extend functionality for your web projects.">
+
+    <!-- Keywords -->
+    <meta name="keywords" content="CSS framework documentation, Plane CSS, customization, getting started, responsive design, web development, grid system, components">
+
+    <!-- Author -->
+    <meta name="author" content="Plane">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Plane CSS Framework Documentation">
+    <meta property="og:description" content="Detailed guide on how to use and customize the Plane CSS framework for modern web development.">
+    <meta property="og:image" content="https://yourwebsite.com/docs-og-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/docs">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plane CSS Framework Documentation">
+    <meta name="twitter:description" content="Learn how to use Plane CSS to create modern, customizable, and high-performance web projects.">
+    <meta name="twitter:image" content="https://yourwebsite.com/docs-twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="../dist/css/app.min.css">
+</head>
+
+<body id="docs-body" class="docs-body">
+    <header class="docs-header">
+        <button id="hamburger" class="hamburger" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </button>
+        <a class="logo" href="../index.html">Plane</a>
+    </header>
+    <aside id="docs-sidebar" class="docs-sidebar">
+        <header class="sidebar-title">
+            <button id="close-button" class="close-button" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+            </button>
+            <a class="logo" href="../index.html">Plane</a>
+        </header>
+        <nav class="sidebar-nav">
+            <ul class="menu is-vertical">
+                <li><a href="#getting-started">Getting started</a></li>
+                <li><a href="#project-structure">Project structure</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li>
+                    <a href="#base">Base</a>
+                    <ul>
+                        <li><a href="#base-grid">Grid</a></li>
+                        <li><a href="#base-typography">Typography</a></li>
+                        <li><a href="#base-forms">Forms</a></li>
+                        <li><a href="#base-helper">Helper</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#elements">Elements</a>
+                    <ul>
+                        <li><a href="#elements-button">Button</a></li>
+                        <li><a href="#elements-table">Table</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#components">Components</a>
+                    <ul>
+                        <li><a href="#components-menu">Menu</a></li>
+                        <li><a href="#components-breadcrumb">Breadcrumb</a></li>
+                    </ul>
+                </li>
+                <li><a href="#utilities">Utilities</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="docs-content">
+        <div class="content-wrapper">
+            <div class="grid-container">
+                <div class="grid-x align-center">
+                    <div class="cell xlarge-8">
+                        <section id="getting-started">
+                            <h1 class="h1">Getting started</h1>
+                            <h2 class="h2">Overview</h2>
+                            <p>Plane is a <strong>starter web project</strong> designed to provide a solid foundation for developing any
+                                type
+                                of web project.
+                                It includes a Gulp-based build system for automating tasks such as compiling SCSS to
+                                CSS,
+                                concatenating, transpiling, and minifying JavaScript,
+                                along with other essential features such as a flexbox grid system and basic settings.
+                            </p>
+                            <h2 class="h2">Prerequisites</h2>
+                            <p><strong>Node.js</strong> and <strong>npm</strong> installed on your machine.</p>
+                            <h2 class="h2">Installation</h2>
+                            <ol>
+                                <li>Clone the repository: <code>git clone [repository-url]</code></li>
+                                <li>Navigate to the project directory: <code>cd [project-name]</code></li>
+                                <li>Install dependencies: <code>npm install</code></li>
+                            </ol>
+                            <h2 class="h2">Usage</h2>
+                            <ol>
+                                <li>Run <code>npm start</code> for development mode or <code>npm run build</code> for
+                                    production mode.</li>
+                                <li>Edit the <code>src/scss/settings/_settings.scss</code> file for basic configuration
+                                    or
+                                    edit any other file as you wish.</li>
+                            </ol>
+                        </section>
+                        <section id="project-structure">
+                            <h1 class="h1">Project structure</h1>
+                            <p>The Plane framework is organized to keep your styles and scripts modular and easy to
+                                maintain. Below is the structure of the project:</p>
+                            <pre class="code"><code>/project-name
+│   README.md              # Project documentation
+│   gulpfile.js            # Gulp tasks for building and watching files
+│   package.json           # Node dependencies and scripts
+│   index.html             # Entry point for the project
+└───src
+    └───scss               # Source files for styles
+    │   └───base           # Global styles and helpers (reset, typography, helpers, grid, etc.)
+    │   └───components     # Reusable UI components (menus, breadcrumbs, cards, etc.)
+    │   └───elements       # Styles for HTML elements (buttons, tables, etc.)
+    │   └───layout         # Layout styles (sidebar, navbar, footer etc.)
+    │   └───pages          # Page-specific styles (login, signup, etc.)
+    │   └───settings       # Global variables and settings
+    │   └───util           # SCSS tools and helpers (functions, mixins etc.)
+    │   └───vendor         # Third-party or external styles (optional)
+    │   │   index.scss     # Main SCSS file that imports all other SCSS files
+    └───js                 # Source files for JavaScript
+        │   main.js        # Main JavaScript file
+        │   ... other JS files
+└───dist
+    └───css                # Compiled and minified CSS
+    └───js                 # Compiled and minified JavaScript
+</code></pre>
+
+                        </section>
+                        <section id="settings">
+                            <h1 class="h1">Settings</h1>
+                            <p>The <code>settings</code> folder is the core configuration folder for the Plane
+                                framework.
+                                It defines key global variables such as colors, typography, grid settings, and
+                                breakpoints
+                                that are used throughout the project.
+                                The rule of thumb for this folder is that it should not output a single line of CSS when
+                                compiled on its own.
+                                These are nothing but SCSS variables.
+                            </p>
+
+                            <p>The main sections if the <code>_settings.scss</code> file include:</p>
+                            <ul>
+                                <li><strong>Global Settings</strong>: Default settings for font sizes, colors, line
+                                    heights,
+                                    etc.</li>
+                                <li><strong>Breakpoints</strong>: Configurations for screen sizes for responsive design.
+                                </li>
+                                <li><strong>Grid</strong>: Configurations for the grid system (number of columns,
+                                    gutters,
+                                    etc.)</li>
+                                <li><strong>Typography</strong>: Default settings for paragraphs, headings, and other
+                                    text
+                                    elements.</li>
+                                <li><strong>Form</strong>: Configurations for form elements such as inputs, labels, and
+                                    buttons.</li>
+                            </ul>
+
+                            <p>This file is designed to be modified according to your project’s needs, allowing for easy
+                                customization of the core design system.</p>
+                        </section>
+                        <section id="base">
+                            <h1 class="h1">Base</h1>
+                            <p>The <code>base</code> folder contains foundational styles that set the groundwork for the
+                                Plane framework. These styles ensure consistency across the entire project and include
+                                the
+                                following:</p>
+
+                            <ul>
+                                <li><strong>Reset CSS</strong>: Resets default browser styling to create a consistent
+                                    starting point.</li>
+                                <li><strong>Global Styling</strong>: Basic global styles for elements like body,
+                                    headings,
+                                    and links.</li>
+                                <li><strong>Helper Classes</strong>: Utility classes for margins, padding, alignment,
+                                    and
+                                    other layout helpers.</li>
+                                <li><strong>Typography</strong>: Base typography settings including font sizes, weights,
+                                    and
+                                    line heights for headings and paragraphs.</li>
+                                <li><strong>Form Styles</strong>: Standard form element styling such as inputs, labels,
+                                    and
+                                    buttons.</li>
+                                <li><strong>Grid System</strong>: Flexbox-based grid system for responsive layouts.</li>
+                            </ul>
+
+                            <p>This folder is essential for setting up the core design language and basic structure of
+                                your
+                                project.</p>
+                            <h2 class="h2" id="base-grid">Grid</h2>
+
+                            <p>The Plane framework offers a flexible and responsive 12-column grid system.
+                                This system is built using Flexbox and allows for easy customization
+                                of layouts that adapt to different screen sizes.</p>
+                            <h3 class="h3">Basics</h3>
+                            <p>The Plane framework’s grid system utilizes two main classes: <code>.grid-x</code> and
+                                <code>.cell</code>.
+                            </p>
+
+                            <ul>
+                                <li><code>.grid-x</code>: Creates a flex container for aligning grid cells in a row.
+                                </li>
+                                <li><code>.cell</code>: Defines individual grid items and their column spans.</li>
+                            </ul>
+
+                            <p>To specify the number of columns a cell should span at different breakpoints, add classes
+                                in
+                                the format <code>{name-of-breakpoint}-{number-of-columns}</code>. This allows for
+                                responsive
+                                adjustments based on screen size.</p>
+
+                            <pre class="code language-html" data-lang="HTML"><code>&lt;div class="grid-x"&gt;
+    &lt;div class="cell medium-6 large-4"&gt;
+        .medium-6 .large-4
+    &lt;/div&gt;
+    &lt;div class="cell medium-6 large-8"&gt;
+        .medium-6 .large-8
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            <ul>
+                                <li><code>medium-6</code>: On medium screens, each cell spans 6 out of 12 columns (50%
+                                    width).</li>
+                                <li><code>large-4</code>: On large screens, the first cell spans 4 out of 12 columns
+                                    (33.33%
+                                    width).</li>
+                                <li><code>large-8</code>: On large screens, the second cell spans 8 out of 12 columns
+                                    (66.67% width).</li>
+                            </ul>
+                            <div class="grid-demo">
+                                <div class="grid-x">
+                                    <div class="cell">
+                                        <div class="cell-content">.cell</div>
+                                    </div>
+                                </div>
+                                <div class="grid-x">
+                                    <div class="cell medium-6">
+                                        <div class="cell-content">.medium-6</div>
+                                    </div>
+                                    <div class="cell medium-6">
+                                        <div class="cell-content">.medium-6</div>
+                                    </div>
+                                </div>
+
+                                <div class="grid-x">
+                                    <div class="cell medium-6 large-4">
+                                        <div class="cell-content">.medium-6 .large-4</div>
+                                    </div>
+                                    <div class="cell medium-6 large-8">
+                                        <div class="cell-content">.medium-6 .large-8</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="h3">Gutters</h3>
+                            <p>To add gutters between cells in the grid, use the <code>grid-margin-x</code> class on
+                                your
+                                grid. The size of the gutters can be customized in the <code>_settings.scss</code> file,
+                                allowing you to adjust the spacing to fit your design needs.</p>
+                            <div class="grid-demo">
+                                <div class="grid-x grid-margin-x">
+                                    <div class="cell medium-6 large-4">
+                                        <div class="cell-content">.medium-6 .large-4</div>
+                                    </div>
+                                    <div class="cell medium-6 large-8">
+                                        <div class="cell-content">.medium-6 .large-8</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="h3">Grid Containers</h3>
+                            <p>
+                                The grid is designed to take up the full width of the available space by default. To
+                                restrict it horizontally, use the <code>grid-container</code> class. This will center
+                                the
+                                grid and set a maximum width, based on the <code>$grid-container</code> variable
+                                (default is
+                                1200px), with left and right padding determined by half of the
+                                <code>$grid-container-padding</code> setting.
+                            </p>
+                            <ul>
+                                <li><strong>Fluid Container</strong>: To make the grid stretch across the full width of
+                                    the
+                                    available space, add the <code>fluid</code> class to your
+                                    <code>grid-container</code>.
+                                </li>
+                                <li><strong>Full Container</strong>: To stretch the grid across the full width and
+                                    remove
+                                    the container padding, use the <code>full</code> class with your
+                                    <code>grid-container</code>.
+                                </li>
+                            </ul>
+
+                            <h3 class="h3">Offsets</h3>
+                            <p>To use offsets, add a class like <code>large-offset-4</code> to your cell. This class
+                                will
+                                add a left margin to the cell, pushing it to the right by a specified number of columns.
+                            </p>
+                            <div class="grid-demo">
+                                <div class="grid-x grid-margin-x">
+                                    <div class="cell medium-3 large-4">
+                                        <div class="cell-content">.medium-3 .large-4</div>
+                                    </div>
+                                    <div class="cell medium-3 large-4 large-offset-4">
+                                        <div class="cell-content">.medium-3 .large-4</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="h2" id="base-typography">Typography</h2>
+                            <p>Typography sets default styles for headings, paragraphs, semantic text, blockquote and
+                                lists
+                                elements.</p>
+                            <ul>
+                                <li>By default there are different font sizes for small and larger screens. You can set
+                                    it
+                                    for the body in <code>_base.scss</code> file.</li>
+                                <li>Set default text styles in the <code>_text.scss</code> file. Different leadings and
+                                    lineheights depending on the screen size can also be configured here.</li>
+                                <li>Set the global link color via <code>$anchor-color</code> in the
+                                    <code>_settings.scss</code> file.
+                                </li>
+                            </ul>
+                            <h3 class="h3">Headings</h3>
+                            <p>All HTML headings, <code>h1</code> through <code>h6</code>, are available. You can edit
+                                the
+                                sizes, styles and margins of the headings in the <code>_heading.scss</code> file.</p>
+                            <pre class="code language-html" data-lang="HTML"><code>&lt;h1&gt;H1 Heading&lt;/h1&gt;
+&lt;h2&gt;H2 Heading&lt;/h2&gt;
+&lt;h3&gt;H3 Heading&lt;/h3&gt;
+...</code></pre>
+                            <table class="headings-table">
+                                <thead>
+                                    <tr>
+                                        <th>Heading</th>
+                                        <th>class</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>h1</code></td>
+                                        <td>
+                                            <h1>H1 Heading</h1>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>h2</code></td>
+                                        <td>
+                                            <h2>H2 Heading</h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>h3</code></td>
+                                        <td>
+                                            <h3>H3 Heading</h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>h4</code></td>
+                                        <td>
+                                            <h4>H4 Heading</h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>h5</code></td>
+                                        <td>
+                                            <h5>H5 Heading</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>h6</code></td>
+                                        <td>
+                                            <h6>H6 Heading</h6>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>There are also <code>.h1</code> through <code>.h6</code> classes available, for when you
+                                want
+                                to match the font styling of a
+                                heading but cannot use the associated HTML element.</p>
+                            <pre class="code language-html" data-lang="HTML"><code>&lt;div class="h1"&gt;H1 Heading&lt;/div&gt;
+&lt;div class="h2"&gt;H2 Heading&lt;/div&gt;
+...</code></pre>
+                            <h3 class="h3">Blockquotes</h3>
+                            <p>For quoting blocks of content from another source within your document.</p>
+                            <pre class="code language-html" data-lang="HTML"><code>&lt;blockquote class=&quot;blockquote&quot;&gt;
+&lt;p&gt;&lt;em&gt;A well-known quote, contained in a blockquote element.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+                            <blockquote class="blockquote">
+                                <p><em>A well-known quote, contained in a blockquote element.</em></p>
+                            </blockquote>
+                            <h2 class="h2" id="base-forms">Forms</h2>
+                            <p>Creating a form in Plane is designed to be easy but extremely flexible. Forms are built
+                                with
+                                a combination of standard form elements, as well as grid rows and columns or cells.
+                                Customize the styles in the <code>_forms.scss</code> file to match your design
+                                preferences.
+                            </p>
+                            <form class="margin-small-bottom">
+                                <fieldset>
+                                    <legend>A Stacked Form</legend>
+                                    <div class="form-item">
+                                        <label for="form-email">Email</label>
+                                        <input type="email" id="form-email" placeholder="Email" />
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="form-password">Password</label>
+                                        <input type="password" id="form-password" placeholder="Password" />
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="form-state">State</label>
+                                        <select id="form-state">
+                                            <option>AL</option>
+                                            <option>CA</option>
+                                            <option>IL</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="button">Sign in</button>
+                                </fieldset>
+                            </form>
+                            <h3 class="h3">Checkboxes and Radio Buttons</h3>
+                            <p>Checkboxes and radio buttons are fully customizable. You can adjust their appearance
+                                extensively by editing the provided CSS, ensuring they seamlessly integrate with your
+                                project's overall look and feel.</p>
+                            <pre class="code language-html" data-lang="HTML"><code>&lt;div class="custom-checkbox"&gt;
+    &lt;label for="remember"&gt;
+        &lt;input type="checkbox" id="remember" /&gt;
+        &lt;span class="checkbox"&gt;&lt;/span&gt;
+        Remember me
+    &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                            <pre class="code language-html" data-lang="HTML"><code>&lt;div class="custom-radio"&gt;
+    &lt;label for="language"&gt;
+        &lt;input type="radio" id="language" /&gt;
+        &lt;span class="radio"&gt;&lt;/span&gt;
+        English
+    &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                            <form>
+                                <fieldset>
+                                    <legend>Custom checkbox and radio</legend>
+                                    <div class="custom-checkbox form-item">
+                                        <label for="form-remember">
+                                            <input type="checkbox" id="form-remember" />
+                                            <span class="checkbox"></span>
+                                            Remember me
+                                        </label>
+                                    </div>
+                                    <div class="custom-radio form-item">
+                                        <label for="language-de">
+                                            <input type="radio" id="language-de" name="language" value="de" />
+                                            <span class="radio"></span>
+                                            German
+                                        </label>
+                                    </div>
+                                    <div class="custom-radio">
+                                        <label for="language-en">
+                                            <input type="radio" id="language-en" name="language" value="en" />
+                                            <span class="radio"></span>
+                                            English
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <h2 class="h2" id="base-helper">Helper</h2>
+                            <p>Plane provides a variety of helper classes for common layout and text styling needs,
+                                including flex alignment, text alignment, text transformation, and margin/padding
+                                utilities.</p>
+
+                            <h3 class="h3">Flex Alignment</h3>
+                            <p>Use these classes to align flexbox items within a container:</p>
+                            <ul>
+                                <li><code>.align-left</code>: Aligns items to the start (left).</li>
+                                <li><code>.align-right</code>: Aligns items to the end (right).</li>
+                                <li><code>.align-center</code>: Centers items horizontally.</li>
+                                <li><code>.align-justify</code>: Distributes items evenly, with space between.</li>
+                                <li><code>.align-spaced</code>: Distributes items evenly, with space around.</li>
+                            </ul>
+
+                            <h3 class="h3">Text Alignment</h3>
+                            <p>Use these classes to align or transform text:</p>
+                            <ul>
+                                <li><code>.text-left</code>: Aligns text to the left.</li>
+                                <li><code>.text-center</code>: Centers text.</li>
+                                <li><code>.text-right</code>: Aligns text to the right.</li>
+                                <li><code>.text-uppercase</code>: Transforms text to uppercase.</li>
+                                <li><code>.text-lowercase</code>: Transforms text to lowercase.</li>
+                                <li><code>.strong</code>: Makes text bold.</li>
+                                <li><code>.italic</code>: Makes text italic.</li>
+                            </ul>
+
+                            <h3 class="h3">Margin and Padding</h3>
+                            <p>Adjust margins and paddings responsively using these utility classes. They are generated
+                                based on your project's global spacing settings:</p>
+                            <ul>
+                                <li><code>.margin-top</code>, <code>.margin-bottom</code>: Adjusts top/bottom margins.
+                                </li>
+                                <li><code>.padding-top</code>, <code>.padding-bottom</code>: Adjusts top/bottom padding.
+                                </li>
+                                <li>Variations available for small, medium, and large spacings (e.g.,
+                                    <code>.margin-large-top</code>, <code>.padding-small-bottom</code>).</li>
+                            </ul>
+                        </section>
+                        <section id="elements">
+                            <h1 class="h1">Elements</h1>
+                            <p>The elements folder contains styles for various HTML elements such as buttons, tables,
+                                and
+                                more. This folder provides essential styling for common UI elements, ensuring they look
+                                polished and consistent across your project. Customize these styles as needed to fit
+                                your
+                                design preferences and project requirements.</p>
+                            <h2 class="h2" id="elements-button">Button</h2>
+                            <p>You can style links as buttons using the <code>.button</code> class. By default, the
+                                framework provides three types of buttons: primary, secondary, and outlined.</p>
+                            <p>You can customize the appearance of these buttons in the <code>_button.scss</code> file
+                                to
+                                fit your design needs.</p>
+                            <div class="buttons">
+                                <a class="button" href="#">Primary</a>
+                                <a class="button is-secondary" href="#">Secondary</a>
+                                <a class="button is-hollow" href="#">Hollow</a>
+                            </div>
+                            <h2 class="h2" id="elements-table">Table</h2>
+                            <p>Here's a straightforward table designed to meet all your basic table requirements. You
+                                can
+                                customize the appearance in the <code>_table.scss</code> file.</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>City</th>
+                                        <th>Country</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Rome</td>
+                                        <td>Italy</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Berlin</td>
+                                        <td>Germany</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Barcelona</td>
+                                        <td>Spain</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section id="components">
+                            <h1 class="h1">Components</h1>
+                            <p>Components are reusable UI elements like menus, breadcrumbs, cards, and more. With Plane,
+                                you
+                                have the flexibility to modify, extend, and create new components as needed, allowing
+                                you to
+                                tailor the framework to suit your requirements.</p>
+                            <h2 class="h2" id="components-menu">Menu</h2>
+                            <p>The menu component can be displayed either horizontally or vertically. Add the class
+                                <code>.is-vertical</code> to the menu to create a vertical menu.
+                            </p>
+                            <pre class="code language-html" data-lang="HTML"><code>&lt;ul class="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;One&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="is-active"&gt;&lt;a href="#"&gt;Two&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Three&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                            <ul class="menu">
+                                <li><a href="#">One</a></li>
+                                <li class="is-active"><a href="#">Two</a></li>
+                                <li><a href="#">Three</a></li>
+                                <li><a href="#">Four</a></li>
+                            </ul>
+                            <h2 class="h2" id="components-breadcrumb">Breadcrumb</h2>
+                            <p>The breadcrumb component is used for navigation, indicating the user's current location
+                                within the website hierarchy.</p>
+                            <pre class="code language-html" data-lang="HTML"><code>&lt;ol class="breadcrumb"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Features&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="is-disabled"&gt;&lt;span&gt;Disabled&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="is-active"&gt;&lt;a href="#"&gt;Active&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                            <ol class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Features</a></li>
+                                <li class="is-disabled">
+                                    <span>Disabled</span>
+                                </li>
+                                <li class="is-active">
+                                    <a href="#">Active</a>
+                                </li>
+                            </ol>
+                        </section>
+                        <section id="utilities">
+                            <h1 class="h1">Utilities</h1>
+                            <p>The <code>util</code> folder of the project contains a set of SCSS helper functions and
+                                mixins aimed at enhancing the development process by providing commonly used
+                                functionalities.</p>
+                            <h2 class="h2">SCSS Helper Functions</h2>
+                            <ul>
+                                <li><code>rem-calc($values, $base: null)</code>: Converts one or more pixel values into
+                                    matching rem values, optionally based on a given base font size.</li>
+                                <li><code>strip-unit($number)</code>: Returns the number without unit</li>
+                            </ul>
+                            <h2 class="h2">SCSS Mixins</h2>
+                            <ul>
+                                <li><code>breakpoint($val: $zero-breakpoint)</code>: Generates a media query string
+                                    based on
+                                    the input value, which can be a breakpoint name, pixel value, or keyword.</li>
+                                <li><code>clearfix()</code>:</li>
+                                <li><code>vertical-center()</code>:</li>
+                                <li><code>horizontal-center()</code>:</li>
+                                <li><code>absolute-center()</code>:</li>
+                            </ul>
+                            <pre class="code language-scss" data-lang="SCSS"><code>// Example usage of the SCSS helper functions
+font-size: rem-calc(20);
+
+// Example usage of the SCSS mixins
+.container {
+    @include clearfix;
+    @include vertical-center;
+    @include horizontal-center;
+    @include absolute-center;
+}
+
+@include breakpoint(medium) {
+    // CSS rules for medium breakpoint
+}</code></pre>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../dist/js/app.min.js"></script>
+</body>
+
+</html>

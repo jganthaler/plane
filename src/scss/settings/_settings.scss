@@ -1,4 +1,4 @@
-//  Foundation for Sites Settings
+//  Plane Settings
 //  -----------------------------
 //
 //  Table of Contents:
@@ -16,21 +16,30 @@ $global-font-size-desktop: rem-calc(18);
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 
-$primary-color: #1779ba;
-$secondary-color: #767676;
-$success-color: #3adb76;
-$warning-color: #ffae00;
-$alert-color: #cc4b37;
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+$primary-color: #005091;
+$secondary-color: #00b4f0;
+$success-color: #69b42d;
+$warning-color: #f9c522;
+$alert-color: #e51717;
+$gray-0: #f9fafa;
+$gray-50: #f4f5f5;
+$gray-75: #e8eaeb;
+$gray-100: #dcdee0;
+$gray-200: #cbcfd1;
+$gray-300: #b4b9bd;
+$gray-400: #a5abb0;
+$gray-500: #8f969c;
+$gray-600: #82898e;
+$gray-700: #666b6f;
+$gray-800: #4f5356;
+$gray-900: #3c3f42;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$global-weight-normal: normal;
-$global-weight-bold: bold;
+$body-font-family: 'Inter', Helvetica, Roboto, Arial, sans-serif;
+$global-weight-normal: 400;
+$global-weight-bold: 700;
 $global-radius: rem-calc(5);
 $global-spacing: (
     small: ('small' : 10, 'medium' : 20, 'large' : 40),
@@ -43,9 +52,10 @@ $global-spacing: (
 $breakpoints: (
     small: 0,
     medium: 640px,
-    large: 1024px
+    large: 1024px,
+    xlarge: 1280px
 );
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xlarge);
 
 // 3. The Grid
 // -----------
@@ -93,7 +103,7 @@ $small-font-size: 80%;
 
 // Heading
 $header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $header-lineheight: 1.25;
 $header-margin-bottom: 0.5rem;
@@ -101,18 +111,18 @@ $header-text-rendering: optimizeLegibility;
 
 // 5. Form
 // -----------
-$input-placeholder-color: $medium-gray;
+$input-placeholder-color: $gray-600;
 $input-font-size: rem-calc(16);
 $input-height: rem-calc(40);
 $input-background: $white;
-$input-border: 1px solid $light-gray;
+$input-border: 1px solid $gray-100;
 $input-padding: rem-calc(5 10);
 $input-color: $body-font-color;
 $input-textarea-padding: rem-calc(10);
 $input-focus-background: $white;
-$input-focus-border: 1px solid $medium-gray;
+$input-focus-border: 1px solid $gray-400;
 $input-disabled-opacity: 0.5;
 $form-label-font-size: rem-calc(12);
-$form-label-color: $dark-gray;
+$form-label-color: $gray-900;
 $form-item-margin: 1rem;
 $custom-checkbox-size: rem-calc(16);
