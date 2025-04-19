@@ -8,6 +8,3 @@
 
 # Compiled output
 node_modules/
-
-# Custom
-dist/
