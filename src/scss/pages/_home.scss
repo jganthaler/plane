@@ -1,3 +1,52 @@
+.page-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($primary-color, 0.5);
+    backdrop-filter: blur(10px);
+    padding: rem-calc(0 10);
+    .navigation-container {
+        padding: rem-calc(10 0);
+        display: flex;
+        align-items: center;
+        @include breakpoint(medium) {
+            padding: rem-calc(20 0);
+        }
+        .logo {
+            display: block;
+            font-size: rem-calc(24);
+            line-height: rem-calc(30);
+            font-weight: $global-weight-bold;
+            text-decoration: none;
+            color: $white;
+            padding: rem-calc(5 0);
+        }
+        .main-navigation {
+            margin-left: auto;
+            .menu {
+                li {
+                    a {
+                        display: flex;
+                        font-size: rem-calc(14);
+                        line-height: rem-calc(20);
+                        padding: rem-calc(10 0);
+                        color: $white;
+                        @include breakpoint(medium) {
+                            font-size: rem-calc(16);
+                            line-height: rem-calc(20);
+                        }
+                        &:hover {
+                            text-decoration: underline;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .page-header {
     background-color: $primary-color;
     background-image: linear-gradient(
